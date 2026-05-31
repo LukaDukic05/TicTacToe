@@ -13,5 +13,16 @@ public class TicTacToeTest {
     Board board = new Board();
     assertTrue(board.isCellEmpty(0,0));
 }
-
+@Test
+    public void place_shouldPutMarkerInCorrectPosition_Positive(){
+        Board board = new Board();
+        board.place(0,0,'X');
+        assertEquals('X',board.getCells()[0][0],"Cell should contain X");
+}
+@Test
+    public void place_shouldNotPutWrongMarker_Negative(){
+        Board board=new Board();
+        board.place(1,1,'0');
+        assertNotEquals('X',board.getCells()[1][1],"Cell should not contain X");
+    }
 }
