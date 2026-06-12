@@ -34,6 +34,12 @@ public class TicTacToe {
 
             if(hasWinner()) {
                 board.print();
+                System.out.println("Player " + currentplayer.getMarker() + " wins!");
+                break;
+            }
+
+            if (board.isFull()) {
+                board.print();
                 System.out.println("It's a draw!");
                 break;
             }
@@ -49,7 +55,7 @@ public class TicTacToe {
         char[][] c = board.getCells();
 
         for (int i = 0; i < 3; i++) {
-            if (c[i][0] != '\u0000' && c[i][1] == c[i][1] && c[i][1] == c[i][2]) return true;
+            if (c[i][0] != '\u0000' && c[i][0] == c[i][1] && c[i][1] == c[i][2]) return true;
             if (c[0][i] != '\u0000' && c[0][i] == c[1][i] && c[1][i] == c[2][i]) return true;
         }
 
