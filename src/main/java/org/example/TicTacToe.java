@@ -55,5 +55,7 @@ public class TicTacToe {
 
         if (c[0][0] != '\u0000' && c[0][0] == c[1][1] && c[1][1] == c[2][2]) return true;
         if (c[0][2] != '\u0000' && c[0][2] == c[1][1] && c[1][1] == c[2][0]) return true;
+
+        return false;
     }
 }
