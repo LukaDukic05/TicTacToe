@@ -25,4 +25,22 @@ public class TicTacToeTest {
         board.place(1,1,'0');
         assertNotEquals('X',board.getCells()[1][1],"Cell should not contain X");
     }
+
+    @Test
+    public void isFull_shouldReturnTrueWhenBoardFilled_Positive() {
+        Board board = new Board();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++){
+                board.place(i, j, 'X');
+            }
+        }
+        assertTrue(board.isFull(), "Full Board should return true");
+    }
+
+    @Test
+    public void isFull_shouldReturnFalseWhenBoardNotFull_Negative() {
+        Board board = new Board();
+        board.place(0,0,'X');
+        assertFalse(board.isFull(), "Partially filled Board should return false");
+    }
 }
