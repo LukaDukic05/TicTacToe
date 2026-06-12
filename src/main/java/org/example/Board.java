@@ -39,4 +39,16 @@ public class Board {
         return true;
 
     }
+
+    public void print() {
+        System.out.println("-------------");
+        for (int i = 0; i < 3; i++) {
+            System.out.print("| ");
+            for (int j = 0; j < 3; j++) {
+                char displayChar = (cells[i][j] == '\u0000') ? ' ' : cells[i][j];
+                System.out.print(displayChar + " | ");
+            }
+            System.out.println("\n-----------------");
+        }
+    }
 }
