@@ -20,13 +20,13 @@ public class Board {
         cells[row][col] = marker;
     }
 
-    public void clear(){
-        for(int i =0;i<3;i++){
-            for (int j =0;j<3;j++){
+    public void clear() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 cells[i][j] = '\u0000';
             }
         }
-
+    }
 
     public boolean isFull() {
         for (int row = 0; row < 3; row++) {

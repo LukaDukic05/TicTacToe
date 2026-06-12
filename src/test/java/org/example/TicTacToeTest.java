@@ -35,11 +35,11 @@ public class TicTacToeTest {
         assertTrue(board.isCellEmpty(1,1),"Board should be empty after clear");
     }
     @Test
-    public void clear_ShouldNotBeEmptyBeforeCallingClear_Negative(){
+    public void clear_ShouldNotBeEmptyBeforeCallingClear_Negative() {
         Board board = new Board();
-        board.place(2,2,'0');
-        assertFalse(board.isCellEmpty(2,2),"Cell should not be empty before clear");
-
+        board.place(2, 2, '0');
+        assertFalse(board.isCellEmpty(2, 2), "Cell should not be empty before clear");
+    }
     public void isFull_shouldReturnTrueWhenBoardFilled_Positive() {
         Board board = new Board();
         for (int i = 0; i < 3; i++) {
