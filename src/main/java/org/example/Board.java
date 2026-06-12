@@ -19,4 +19,11 @@ public class Board {
     public void place(int row, int col, char marker) {
         cells[row][col] = marker;
     }
+    public void clear(){
+        for(int i =0;i<3;i++){
+            for (int j =0;j<3;j++){
+                cells[i][j] = '\u0000';
+            }
+        }
+    }
 }

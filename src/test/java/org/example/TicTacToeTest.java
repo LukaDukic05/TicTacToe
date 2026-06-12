@@ -25,4 +25,18 @@ public class TicTacToeTest {
         board.place(1,1,'0');
         assertNotEquals('X',board.getCells()[1][1],"Cell should not contain X");
     }
+
+    @Test
+    public void clear_shouldEmptyAllCells_Positive(){
+        Board board =new Board();
+        board.place(1,1,'X');
+        board.clear();
+        assertTrue(board.isCellEmpty(1,1),"Board should be empty after clear");
+    }
+    @Test
+    public void clear_ShouldNotBeEmptyBeforeCallingClear_Negative(){
+        Board board = new Board();
+        board.place(2,2,'0');
+        assertFalse(board.isCellEmpty(2,2),"Cell should not be empty before clear");
+    }
 }
