@@ -43,4 +43,19 @@ public class TicTacToeTest {
         board.place(0,0,'X');
         assertFalse(board.isFull(), "Partially filled Board should return false");
     }
+
+    @Test
+        public void getCells_shouldReturnCorrectBoardState_Positive() {
+        Board board = new Board();
+        board.place(0, 2, 'X');
+        char[][] cells = board.getCells();
+        assertEquals('X', cells [0][2], "getCells should placed marker");
+    }
+
+    @Test
+        public void getCells_shouldNotReturnIncorrectMarker_Negative() {
+        Board board = new Board();
+        char[][] cells = board.getCells();
+        assertNotEquals('X', cells[2][2], "Empty cell should not contain X");
+    }
 }
