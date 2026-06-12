@@ -19,11 +19,24 @@ public class Board {
     public void place(int row, int col, char marker) {
         cells[row][col] = marker;
     }
+
     public void clear(){
         for(int i =0;i<3;i++){
             for (int j =0;j<3;j++){
                 cells[i][j] = '\u0000';
             }
         }
+
+
+    public boolean isFull() {
+        for (int row = 0; row < 3; row++) {
+            for (int col = 0; col < 3; col++) {
+                if (isCellEmpty(row, col)){
+                    return false;
+                }
+            }
+        }
+        return true;
+
     }
 }
